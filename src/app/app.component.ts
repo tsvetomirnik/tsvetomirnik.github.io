@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { ApiService as GitHubApi, User } from './shared/services/github-api';
+import * as GitHub from './shared/services/github-api';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,11 @@ import { ApiService as GitHubApi, User } from './shared/services/github-api';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  user: Observable<User>;
+  user: Observable<GitHub.User>;
 
   constructor(
     private http: Http,
-    private gitHubApi: GitHubApi
+    private gitHubApi: GitHub.ApiService
   ) { }
 
   ngOnInit() {
