@@ -2,8 +2,10 @@ import { UserInput } from '../Inputs';
 
 export class User {
   name: string;
+  username: string;
   email: string;
   location: string;
+  company: string;
   htmlUrl: string;
   avatarUrl: string;
   bio: string;
@@ -22,9 +24,11 @@ export class User {
 
   private setInput(input: UserInput) {
     this.name = input.name;
+    this.username = input.login;
     this.email = input.email;
     this.bio = input.bio;
     this.location = input.location;
+    this.company = input.company;
     this.htmlUrl = input.html_url;
     this.avatarUrl = input.avatar_url;
     this.publicRepos = input.public_repos;

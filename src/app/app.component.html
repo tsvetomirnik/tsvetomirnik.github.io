@@ -1,3 +1,31 @@
-<h1>
-  {{(user | async)?.name}}
-</h1>
+<div class="profile">
+  <div class="profile__header">
+    <div class="image-container" [style.background-image]="'url(' + userImageUrl + ')'"></div>
+  </div>
+  <div class="profile__content">
+    <div>
+      <h1 class="name">{{ (user | async)?.name }}</h1>
+      <p class="username">@{{ (user | async)?.username }}</p>
+      <p>{{ (user | async)?.bio }}</p>
+    </div>
+
+    <ul class="unstyled-list meta-sections">
+      <li class="meta-section">
+        <div class="meta-section__header">Location</div>
+        <div class="meta-section__text">{{ (user | async)?.location }}</div>
+      </li>
+      <li class="meta-section">
+        <div class="meta-section__header">Company</div>
+        <div class="meta-section__text">{{ (user | async)?.company }}</div>
+      </li>
+    </ul>
+
+    <ul class="unstyled-list icons">
+      <li class="icon">
+        <a href="{{ (user | async)?.htmlUrl }}" target="_blank">
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

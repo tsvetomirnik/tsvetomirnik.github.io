@@ -10,6 +10,7 @@ import * as GitHub from './shared/services/github-api';
 })
 export class AppComponent implements OnInit {
   user: Observable<GitHub.User>;
+  userImageUrl: string;
 
   constructor(
     private http: Http,
@@ -19,5 +20,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let username = 'tsvetomirnik';
     this.user = this.gitHubApi.getUser(username);
+    this.user.subscribe(user => {
+      this.userImageUrl = user.avatarUrl;
+    });
   }
 }
