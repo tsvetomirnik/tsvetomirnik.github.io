@@ -6,7 +6,7 @@ import * as GitHub from './shared/services/github-api';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   user: Observable<GitHub.User>;
