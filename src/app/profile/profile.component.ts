@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import * as GitHub from '../shared/services/github-api';
+import { userConfig } from '../user.config';
 
 @Component({
   selector: 'app-profile',
@@ -17,8 +18,7 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let username = 'tsvetomirnik';
-    this.gitHubApi.getUser(username)
+    this.gitHubApi.getUser(userConfig.githubUsername)
       .subscribe(user => {
         this.user = user;
       });

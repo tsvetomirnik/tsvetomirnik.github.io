@@ -15,13 +15,13 @@
         <div>{{ user?.bio }}</div>
       </section>
 
-      <section>
+      <section *ngIf="user?.location || user?.company">
         <ul class="unstyled-list meta-sections">
-          <li class="meta-section">
+          <li class="meta-section" *ngIf="user?.location">
             <div class="meta-section__header">Location</div>
             <div class="meta-section__text">{{ user?.location }}</div>
           </li>
-          <li class="meta-section">
+          <li class="meta-section" *ngIf="user?.company">
             <div class="meta-section__header">Company</div>
             <div class="meta-section__text">{{ user?.company }}</div>
           </li>
