@@ -1,0 +1,106 @@
+@import '../../styles/_utils';
+
+$metaColumns: 2;
+$metaColSpacingPercentage: 0.03;
+
+.image-container {
+  width: 100px;
+  padding-bottom: 100px;
+  background-size: contain;
+
+  &.circle {
+    border-radius: 50%;
+  }
+}
+
+.profile {
+
+  &__header {
+    background: #e5e6e8;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-container {
+      width: 200px;
+      padding-bottom: 200px;
+      -webkit-box-flex: 0;
+    }
+  }
+
+  &__content {
+    padding: 50px 50px;
+    color: #666;
+    display: flex;
+    align-items: center;
+
+    .content {
+      -webkit-box-flex: 0;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 1.4em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.meta-sections {
+  margin: 0 percentage(-1 * $metaColSpacingPercentage);
+  @include clearfix;
+
+  .meta-section {
+    float: left;
+    max-width: 200px;
+    width: percentage((1 / $metaColumns) - (2 * $metaColSpacingPercentage));
+    margin: 0 percentage($metaColSpacingPercentage);
+    font-size: 12px;
+
+    &__header {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.icons {
+  @include clearfix;
+
+  .icon {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+  .profile {
+    height: 100vh;
+    @include clearfix;
+
+    &__header {
+      position: fixed;
+      float: left;
+      width: 60%;
+      height: 100%;
+    }
+
+    &__content {
+      float: right;
+      width: 40%;
+      height: 100%;
+      padding: 100px 50px;
+    }
+  }
+
+}

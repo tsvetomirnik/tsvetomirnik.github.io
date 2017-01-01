@@ -6,10 +6,12 @@ import { HttpModule } from '@angular/http';
 import { ApiService as GitHubApi } from './shared/services/github-api/api.service';
 
 import { AppComponent } from './app.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

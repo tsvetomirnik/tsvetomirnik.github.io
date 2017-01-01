@@ -1,13 +1,17 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.3;
-  color: #2d2d2d;
+  color: $text-color;
   padding: 0;
   margin: 0;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: $text-color;
 }
 
 .unstyled-list {

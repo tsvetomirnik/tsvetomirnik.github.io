@@ -1,0 +1,43 @@
+<div class="profile">
+  <div class="profile__header">
+    <div class="image-container circle" [style.background-image]="'url(' + user?.avatarUrl + ')'"></div>
+  </div>
+  <div class="profile__content">
+    <div class="content">
+
+      <section>
+        <h1 class="name">{{ user?.name }}</h1>
+        <div class="username">@{{ user?.username }}</div>
+
+      </section>
+
+      <section *ngIf="user?.bio">
+        <div>{{ user?.bio }}</div>
+      </section>
+
+      <section>
+        <ul class="unstyled-list meta-sections">
+          <li class="meta-section">
+            <div class="meta-section__header">Location</div>
+            <div class="meta-section__text">{{ user?.location }}</div>
+          </li>
+          <li class="meta-section">
+            <div class="meta-section__header">Company</div>
+            <div class="meta-section__text">{{ user?.company }}</div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <ul class="unstyled-list icons">
+          <li class="icon">
+            <a href="{{ user?.htmlUrl }}" target="_blank">
+              <i class="fa fa-2x fa-github-square" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</div>
