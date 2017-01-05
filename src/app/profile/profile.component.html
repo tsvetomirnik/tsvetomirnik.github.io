@@ -7,8 +7,7 @@
 
       <section>
         <h1 class="name">{{ user?.name }}</h1>
-        <div class="username">@{{ user?.username }}</div>
-
+        <div *ngIf="user?.username" class="username">@{{ user?.username }}</div>
       </section>
 
       <section *ngIf="user?.bio">
@@ -28,11 +27,11 @@
         </ul>
       </section>
 
-      <section>
+      <section *ngIf="user?.socialIcons.length > 0">
         <ul class="unstyled-list icons">
-          <li class="icon">
-            <a href="{{ user?.htmlUrl }}" target="_blank">
-              <i class="fa fa-2x fa-github-square" aria-hidden="true"></i>
+          <li class="icon" *ngFor="let icon of user.socialIcons">
+            <a href="{{ icon.link }}" target="_blank">
+              <i class="fa fa-x {{ icon.type | socialIcon }}" aria-hidden="true"></i>
             </a>
           </li>
         </ul>

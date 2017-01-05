@@ -4,14 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { ApiService as GitHubApi } from './shared/services/github-api/api.service';
+import { UserConfigResolverService } from './shared/services/user-config-resolver.service';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SocialIconPipe } from './shared/pipes/social-icon.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    SocialIconPipe
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule
   ],
   providers: [
-    GitHubApi
+    GitHubApi,
+    UserConfigResolverService
   ],
   bootstrap: [AppComponent]
 })
