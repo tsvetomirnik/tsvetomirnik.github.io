@@ -29,10 +29,11 @@
 
       <section *ngIf="user?.socialIcons.length > 0">
         <ul class="unstyled-list icons">
-          <li class="icon" *ngFor="let icon of user.socialIcons">
-            <a href="{{ icon.link }}" target="_blank">
-              <i class="fa fa-x {{ icon.type | socialIcon }}" aria-hidden="true"></i>
+          <li class="icon tooltip" *ngFor="let icon of user.socialIcons">
+            <a href="{{ icon.link || 'javascript:void(0);' }}">
+              <i class="fa fa-lg {{ icon.type | socialIcon }}" aria-hidden="true"></i>
             </a>
+            <span *ngIf="icon.text" class="tooltip-content">{{ icon.text }}</span>
           </li>
         </ul>
       </section>
