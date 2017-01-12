@@ -22,7 +22,7 @@ export class UserConfigResolverService {
   }
 
   private resolveSocialIcons(p: ISocialIconConfig) {
-    var profileModel = new SocialIcon();
+    let profileModel = new SocialIcon();
     profileModel.type = p.type;
     profileModel.link = p.link;
     profileModel.text = p.text;

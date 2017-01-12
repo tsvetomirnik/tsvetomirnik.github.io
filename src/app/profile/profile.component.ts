@@ -3,8 +3,9 @@ import { Title } from '@angular/platform-browser';
 
 import * as GitHub from '../shared/services/github-api';
 import { User } from '../shared/models/User';
-import { userConfig } from '../user.config';
 import { UserConfigResolverService } from '../shared/services/user-config-resolver.service';
+
+import { ConfigService } from '../shared/services/config.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,14 +18,21 @@ export class ProfileComponent implements OnInit {
   constructor(
     private title: Title,
     private gitHubApi: GitHub.ApiService,
+    private config: ConfigService,
     private userConfigResolver: UserConfigResolverService
   ) { }
 
   ngOnInit() {
-    this.title.setTitle(`${userConfig.githubUsername}`);
-    this.gitHubApi.getUser(userConfig.githubUsername)
-      .subscribe(user => {
-        this.user = this.userConfigResolver.resolve(user, userConfig);
+
+    this.config.getConfiguration()
+      .subscribe(userConfig => {
+
+        this.title.setTitle(`${userConfig.githubUsername}`);
+        this.gitHubApi.getUser(userConfig.githubUsername)
+          .subscribe(user => {
+            this.user = this.userConfigResolver.resolve(user, userConfig);
+          });
+
       });
   }
 }
