@@ -4,7 +4,7 @@
     * Used to fetch the data from a specific GitHub profile.'
     * IMPORTANT: Don't forget to set your username here.'
     */
-    "githubUsername": "MDimitroff",
+    "githubUsername": "Victorin0x",
     
     /**
     * Full name
@@ -30,7 +30,7 @@
     *   FALSE to hide the field
     *   STRING VALUE to override the one from GitHub
     */
-    "bio": true,
+    "bio": "Head of Software Development",
 
     /**
     * Profile image
@@ -75,8 +75,12 @@
 		    "text": "dimitrov.martin.v@gmail.com"
         },
         {
+            "type": "LINKEDIN",
+            "text": "https://www.linkedin.com/in/martin-dimitrov-web31/"
+        },
+        {
             "type": "GITHUB",
-		    "link": "https://github.com/MDimitroff"
+		    "link": "https://github.com/Victorin0x"
         }
     ]
 }
